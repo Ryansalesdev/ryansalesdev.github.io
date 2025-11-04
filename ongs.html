@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>PetDex</title>
+      <link rel="stylesheet" href="css/ong.css" />
+      <!-- Font Awesome CDN (corrigido) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    </head>
+    <body>
+       <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="left">
+        <a href="#">Sobre nós</a> |
+        <a href="#">Help</a> |
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="fotos/logo.png" alt="PetDex Logo" />
+        <strong>Um lar para cada patinha</strong>
+      </div>
+
+      <!-- Botões na direita -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <a href="#" class="nome-denunciar">DENUNCIAR</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="#" class="active">INICIO</a></li>
+        <li class="dropdown">
+          <a href="#">ONGs <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">ONG AmeMais</a></li>
+            <li><a href="#">ONG LOVEPET</a></li>
+            <li><a href="#">ONG OSPETS</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">VETERINÁRIOS <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Veterinário Lovepet</a></li>
+            <li><a href="#">VETMASTER</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Pets Shop RJ</a></li>
+          </ul>
+        </li>
+        <li><a href="#">CONTATO</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+<div class="cards-container">
+    <div class="card" data-filter="ong.png">
+      <img src="fotos/ong.png"alt="logo ong" height ="500"/>
+      <div class="card-body">
+        <h3 class="ONGs"></h3>
+        <h4>whatsap:(21)3413-6577</h4>
+        <h4>Telefona:(21)9996-57788</h4>
+        <h4>email:ongesperancaanimal@gmail.com</h4>
+      </div>
+     </div>
+    </div>
+
+  <!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Endereço</h4>
+        <p>RIO DE JANEIRO - RJ</p>
+      </div>
+      <div class="footer-col">
+        <h4>Horário</h4>
+        <p>Seg - Sex: 8h - 18h</p>
+        <p>Sáb: 9h - 14h</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <p>📞 (21) 99999-9999</p>
+        <p>✉️ contato@petdex.com</p>
+      </div>
+    </div>
+    <p class="copy">&copy; 2025 PetDex - Todos os direitos reservados.</p>
+    <div class="footer-social">
+      <!-- Link do Instagram corrigido -->
+      <a href="https://instagram.com/petdex.site" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script>
+    // Toggle Dark Theme com persistência
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle?.querySelector('.theme-icon');
+
+    // Carrega tema salvo
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      if (icon) icon.textContent = '☀️';
+    }
+
+    themeToggle?.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      const isDark = document.body.classList.contains('dark-theme');
+      
+      if (icon) {
+        icon.textContent = isDark ? '☀️' : '🌙';
+      }
+      
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+
+ 
+
+</body>
+</html>

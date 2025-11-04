@@ -1,0 +1,405 @@
+/* ===========================
+   RESET E VARIÁVEIS
+=========================== */
+:root {
+  --primary: #f7882f;
+  --accent: #f7882f;
+  --light-bg: #f9f9f9;
+  --dark-bg: #121212;
+  --text-color: #333;
+  --text-muted: #6b7a8f;
+  --card-bg: #fff;
+  --navbar-bg: #f1f1f1;
+  --header-bg: #fff;
+  --footer-bg: var(--light-bg);
+  --dropdown-bg: #fff;
+  --dropdown-border: #ddd;
+  --transition: 0.3s ease;
+  --h1-container:#E0E0E0
+}
+
+/* Modo escuro */
+body.dark-theme {
+  --light-bg: #121212;
+  --text-color: #f1f1f1;
+  --text-muted: #bbb;
+  --card-bg: #1e1e1e;
+  --navbar-bg: #1a1a1a;
+  --header-bg: #1a1a1a;
+  --footer-bg: #1a1a1a;
+  --dropdown-bg: #222;
+  --dropdown-border: #333;
+  --h1-container:#1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===========================
+   TOPO (Top Bar)
+=========================== */
+.top-bar {
+  background-color: var(--primary);
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--primary);
+  font-size: 0.875rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition);
+}
+
+.top-bar a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.top-bar a:hover {
+  color: var(--accent);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.header {
+  background-color: var(--header-bg);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+
+.logo p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+/* Botão Cadastrar */
+.cadastro {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cadastro:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  background-color: var(--navbar-bg);
+  padding: 0.625rem 0;
+  position: relative;
+  z-index: 100;
+  transition: background-color var(--transition);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: color var(--transition);
+}
+
+.nav-menu a.active {
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.nav-menu a:hover:not(.active) {
+  color: var(--accent);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dropdown-bg);
+  min-width: 12rem;
+  border: 1px solid var(--dropdown-border);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.625rem 1rem;
+  color: var(--text-color);
+  transition: background var(--transition), color var(--transition);
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--navbar-bg);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ===========================
+   CONTEÚDO PRINCIPAL
+=========================== */
+.h1-container {
+  background-color: var(--h1-container);
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.titulo h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #d96c1f;
+  font-size: 25px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.element-text {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #627384;
+  font-size: 20px;
+}
+
+.element-text h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--text-color);
+}
+
+.element-text p,
+.element-text ul {
+  margin-bottom: 1rem;
+}
+
+.element-text ul {
+  padding-left: 1.5rem;
+}
+
+.element-text li {
+  margin-bottom: 0.5rem;
+}
+
+.element-text strong {
+  color: var(--text-color);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.site-footer {
+  background-color: var(--footer-bg);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-color);
+  border-top: 1px solid #eaeaea;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.footer-col {
+  min-width: 12.5rem;
+  margin: 0.625rem;
+}
+
+.footer-col h4 {
+  color: var(--accent);
+  margin-bottom: 0.625rem;
+  font-size: 1.125rem;
+}
+
+.footer-col p {
+  margin: 0.313rem 0;
+  font-size: 0.875rem;
+}
+
+.copy {
+  font-size: 0.813rem;
+  color: var(--text-muted);
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  color: var(--text-muted);
+  font-size: 1.75rem;
+  margin: 0 0.5rem;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.footer-social a:hover {
+  color: #e1306c;
+  transform: scale(1.1);
+}
+
+/* ===========================
+   BOTÃO MODO ESCURO (DARK MODE TOGGLE)
+=========================== */
+.theme-toggle {
+  position: fixed;
+  bottom: clamp(1rem, 4vw, 2rem);
+  right: clamp(1rem, 4vw, 1rem);
+  width: clamp(40px, 8vw, 56px);
+  height: clamp(40px, 8vw, 56px);
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+body.dark-theme .theme-toggle {
+  background-color: #222;
+  color: #f1f1f1;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.theme-icon {
+  font-size: 1.5rem;
+}
+
+/* ===========================
+   UTILITÁRIOS (Botões genéricos - mantidos por compatibilidade)
+=========================== */
+.btn,
+.nome-denunciar {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover,
+.nome-denunciar:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.nome-denunciar {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nome-cadastrar {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-hp {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.btn-hp:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
+}

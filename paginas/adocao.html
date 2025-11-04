@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adoção PETDEX</title>
+  <link rel="stylesheet" href="/css/adocao.css" />
+  <!-- Font Awesome CDN (corrigido) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="left">
+        <a href="/paginas/Sobre.html">Sobre nós</a> |
+        <a href="/paginas/help.html">Help</a> |
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="/fotos/logo.png" alt="PetDex Logo" />
+        <div class="p">
+          <p>Um lar para cada patinha</p> 
+        </div>
+      </div>
+
+<div class="search-bar">
+  <input type="text" placeholder="Buscar...">
+  <button type="submit"><i class="fas fa-search"></i></button>
+</div>
+
+      <!-- Botões na direita -->
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <a href="paginas/denuncia.html" class="nome-denunciar">DENUNCIAR</a>
+        <div class="cadastro">
+       <a href="http://jplopx.github.io/" class="nome-cadastrar">Cadastre-se</a>
+    </div>
+      </div>
+    
+  </header>
+
+  <nav class="navbar">
+  <div class="container navbar-inner"> <!-- .navbar-inner para posição relativa local -->
+    <button class="menu-toggle" aria-label="Abrir menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="nav-menu">
+      <li><a href="/index.html" class="active">INICIO</a></li>
+
+      <li class="dropdown">
+        <a href="#">ONGS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">ONG AmeMais</a></li>
+          <li><a href="#">ONG LOVEPET</a></li>
+          <li><a href="#">ONG OSPETS</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">VETERINÁRIOS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Veterinário Lovepet</a></li>
+          <li><a href="#">VETMASTER</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Pets Shop RJ</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">CONTATO</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Cards -->
+<div class="cards-container">
+    <!-- Cachorro -->
+    <div class="card" data-filter="cachorro">
+      <img src="/fotos/meadota.jpeg" alt="Bené caramelo brincalhao que esta aguardando adocao responsavel." height="300"/>
+      <div class="card-body">
+        <h3 class="card-title">Bené</h3>
+        <span>R Santa benedita. MADUREIRA - RJ</span>
+        <br>
+        <a href="ongs.html" class="btn-adotar">Quero adotar!</a>
+
+      </div>
+    </div>
+
+    <div class="card" data-filter="gato">
+      <img src="/fotos/adote2.jpeg" alt="Miudo, menor filhote da ninhada espera sua adocao" height="300"/>
+      <div class="card-body">
+        <h3 class="card-title">Miudo</h3>
+        <span>Av morro alto. BIRIGUI - RJ</span>
+        <br>
+        <span> Ong amigos dos gatenhus</sapn>
+        <a href="ongs.html" class="btn-adotar">Quero adotar!</a>
+      </div>
+    </div>
+
+    <div class="card" data-filter="cavalo">
+      <img src="/fotos/adote3.jpeg" alt="cavalo" height="300" />
+      <div class="card-body">
+        <h3 class="card-title">Pé de pano</h3>
+        <span> R Eustaquio melquiades. MAGÉ - RJ</span>
+        <br>
+        <a href="ongs.html" class="btn-adotar">Quero adotar!</a>
+      </div>
+    </div>
+    </div>
+
+ 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Endereço</h4>
+        <p>RIO DE JANEIRO - RJ</p>
+      </div>
+      <div class="footer-col">
+        <h4>Horário</h4>
+        <p>Seg - Sex: 8h - 18h</p>
+        <p>Sáb: 9h - 14h</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <p>📞 (21) 99999-9999</p>
+        <p>✉️ contato@petdex.com</p>
+      </div>
+    </div>
+    <p class="copy">&copy; 2025 PetDex - Todos os direitos reservados.</p>
+    <div class="footer-social">
+      <!-- Link do Instagram corrigido -->
+      <a href="https://instagram.com/petdex.site" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+ 
+
+  <script>
+    // Toggle Dark Theme com persistência
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle?.querySelector('.theme-icon');
+
+    // Carrega tema salvo
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      if (icon) icon.textContent = '☀️';
+    }
+
+    themeToggle?.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      const isDark = document.body.classList.contains('dark-theme');
+      
+      if (icon) {
+        icon.textContent = isDark ? '☀️' : '🌙';
+      }
+      
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+
+  <script>
+    // Filtro de cards
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".category-btn");
+      const cards = document.querySelectorAll(".card");
+
+      function filterCards(category, activeButton) {
+        cards.forEach(card => {
+          card.style.display = card.dataset.filter === category ? "block" : "none";
+        });
+
+        buttons.forEach(btn => btn.classList.remove("active"));
+        activeButton.classList.add("active");
+      }
+
+      buttons.forEach(button => {
+        button.addEventListener("click", function () {
+          filterCards(this.dataset.category, this);
+        });
+      });
+
+      // Ativa "Cachorro" por padrão
+      if (buttons[0]) {
+        filterCards(buttons[0].dataset.category, buttons[0]);
+      }
+    });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') navMenu.classList.remove('active');
+    });
+  }
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>

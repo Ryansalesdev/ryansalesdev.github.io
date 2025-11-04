@@ -1,0 +1,246 @@
+    /* --- VARIÁVEIS DE DESIGN --- */
+    :root {
+      --primary: #2277ac;
+      --primary-dark: #d4780e;
+      --background: #f9fbf9;
+      --text: #000000;
+      --light-gray: #87CEFA;
+      --dark-gray: rgb(255, 255, 255);
+      --white: #fff;
+      --transition: all 0.3s ease;
+      --shadow: 0 2px 6px rgba(0,0,0,0.08);
+      --border-radius: 10px;
+      --white1:var(--text)
+    }
+
+    /* --- RESET E ESTILOS GLOBAIS --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+      scroll-behavior: smooth; /* rolagem suave */
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 50px 0;
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    h1 { font-size: 2.2rem; text-align: center; }
+    h2 { font-size: 1.8rem; text-align: center; }
+    h3 { text-align: center; margin: 30px 0 15px; }
+
+    p {
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    /* --- TOP BAR --- */
+    .top-bar {
+      background-color: var(--primary);
+      padding: 0.625rem 0;
+      font-size: 0.875rem;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .top-bar a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- CABEÇALHO --- */
+    .header {
+      background-color: var(--white);
+      padding: 30px 0;
+      text-align: center;
+      border-bottom: 2px solid rgb(255, 255, 255);
+    }
+
+    .header img {
+      max-width: 20%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* --- SEÇÃO DE NÚMEROS --- */
+    .stats {
+      background-color: var(--light-gray);
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* --- SERVIÇOS E ESPECIALIDADES --- */
+    .services-section {
+      background-color: var(--white);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-dark);
+      margin: 10px auto;
+      
+    }
+
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      padding: 0 10px; /* espaçamento lateral */
+    }
+
+    .card {
+      background: var(--light-gray);
+      border-radius: var(--border-radius);
+      padding: 20px 10px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      width: 160px; 
+      min-width: 160px;
+      max-width: 180px;
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    /* --- SOBRE --- */
+    .about {
+      background-color: var(--light-gray);
+    }
+
+    /* --- FAQ --- */
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: var(--light-gray);
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .faq-question {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    /* --- CONTATO FINAL (FOOTER) --- */
+    .contact-footer {
+      background-color: var(--dark-gray);
+      color: var(--white1);
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 10px;
+      color: var(--white1);
+    }
+
+    .footer-col p {
+      margin-bottom: 5px;
+      color: var(--white1);
+    }
+
+    .copy {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #000000;
+    }
+
+    .footer-social {
+      margin-top: 15px;
+    }
+
+    .footer-social a {
+      color: var(--white1);
+      font-size: 1.8rem;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    /* --- RESPONSIVO --- */
+    @media (max-width: 768px) {
+      .stats-grid,
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.5rem; }
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      }
+    }
