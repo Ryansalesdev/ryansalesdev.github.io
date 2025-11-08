@@ -13,7 +13,8 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <a href="#container">Sobre nós</a> |
-    <a href="#contatos">Contato</a>
+    <a href="#contatos">Contato</a>    |
+    <a href="../index.html">Inicio</a> |
   </div>
 
   <!-- CABEÇALHO -->
@@ -158,20 +159,33 @@
 
   <!-- SCRIPT PARA ROLAGEM SUAVE  -->
   <script>
-    document.querySelectorAll('.top-bar a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
+  document.querySelectorAll('.top-bar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      
+      const targetId = this.getAttribute('href');
+
+      // ----- AQUI ESTÁ A CORREÇÃO -----
+      // Só executa o código de rolagem se o link começar com #
+      if (targetId.startsWith('#')) {
+        
+        e.preventDefault(); // Previne o "pulo" padrão
+        
         const targetElement = document.querySelector(targetId);
+        
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 20, // ajuste para não ficar colado ao topo
+            top: targetElement.offsetTop - 20,
             behavior: 'smooth'
           });
         }
-      });
+      }
+      // Se não começar com '#' (como o seu ../index.html),
+      // o script não faz nada e deixa o link funcionar normalmente.
+      // ------------------------------------
+
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
