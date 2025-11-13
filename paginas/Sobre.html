@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Help</title>
+  <title>PetDex</title>
   <link rel="stylesheet" href="/css/sobre.css" />
+  <!-- Font Awesome CDN (corrigido) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
+
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container">
       <div class="left">
-        <a href="index.html">Inicio</a> |
+        <a href="/index.html">Inicio</a> |
         <a href="/paginas/help.html">Help</a> |
         <a href="#">Contato</a>
       </div>
@@ -23,79 +25,123 @@
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <img src="/fotos/logo.png" alt="PetDex Logo" loading="lazy" />
-        <p>Um lar para cada patinha</p>
+        <img src="/fotos/logo.png" alt="PetDex Logo" />
+        <div class="p">
+          <p>Um lar para cada patinha</p> 
+        </div>
       </div>
+
+
+
+      <!-- Botões na direita -->
       <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <button id="theme-toggle" class="theme-toggle">
           <span class="theme-icon">🌙</span>
         </button>
-        <button id="cadastro" class="cadastro">Cadastrar</button>
-      </div>
+        <a href="/paginas/denuncia.html"  target="_blank" class="nome-denunciar">DENUNCIAR</a>
+        <div class="cadastro">
+       <a href="http://jplopx.github.io/"  target="_blank"class="nome-cadastrar">Cadastre-se</a>
     </div>
+      </div>
+    
   </header>
 
-  <!-- Navbar -->
-  <nav class="navbar" aria-label="Navegação principal">
-    <div class="container">
-      <ul class="nav-menu">
-        <li><a href="/index.html">INICIO</a></li>
-        <li class="dropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false">ONGs <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">ONG AmeMais</a></li>
-            <li><a href="#">ONG LOVEPET</a></li>
-            <li><a href="#">ONG OSPETS</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false">VETERINÁRIOS <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Veterinário Lovepet</a></li>
-            <li><a href="#">VETMASTER</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false">Pet Shops <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Pets Shop RJ</a></li>
-          </ul>
-        </li>
-        <li><a href="#">CONTATO</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav class="navbar">
+  <div class="container navbar-inner"> <!-- .navbar-inner para posição relativa local -->
+    <button class="menu-toggle" aria-label="Abrir menu">
+      <i class="fas fa-bars"></i>
+    </button>
 
+    <ul class="nav-menu">
+      <li><a href="/index.html" class="active">INICIO</a></li>
+
+      <li class="dropdown">
+        <a href="#">ONGS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">ONG AmeMais</a></li>
+          <li><a href="#">ONG LOVEPET</a></li>
+          <li><a href="#">ONG OSPETS</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">VETERINÁRIOS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/paginas/veterinaria.html">Clínica Dra. Ana Silva</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Pets Shop RJ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Seção “Sobre Nós” -->
   <section class="h1-container">
     <div class="container">
-      <div class="titulo">
-        <h1><strong>Sobre Nós</strong></h1>
-      </div>
+      <h1 class="dev-section__title"><strong>Sobre Nós</strong></h1>
     </div>
   </section>
 
-  <div class="element-text">
+  <div class="element-text container">
     <p>
-     O PetDex é um projeto acadêmico desenvolvido por quatro alunos do curso de Análise e Desenvolvimento de Sistemas, 
-    com o objetivo de criar uma plataforma digital que conecte ONGs, veterinários e petshops em um só lugar. <br>
-
-      A proposta do site é facilitar o acesso a informações e serviços voltados ao bem-estar animal,
-    promovendo uma rede colaborativa entre profissionais, instituições e tutores. <br>
-
-      Além disso, o PetDex possui um forte propósito social, buscando apoiar animais em situação de rua por meio da divulgação 
-    de campanhas de adoção e parcerias com ONGs, e também orientar tutores com conteúdos educativos sobre cuidados, 
-    saúde e comportamento dos pets. <br>
-
+      O PetDex é um projeto acadêmico desenvolvido por quatro alunos do curso de Análise e Desenvolvimento de Sistemas, com o objetivo de criar uma plataforma digital que conecte ONGs, veterinários e petshops em um só lugar.<br><br>
+      A proposta do site é facilitar o acesso a informações e serviços voltados ao bem-estar animal, promovendo uma rede colaborativa entre profissionais, instituições e tutores.<br><br>
+      Além disso, o PetDex possui um forte propósito social, buscando apoiar animais em situação de rua por meio da divulgação de campanhas de adoção e parcerias com ONGs, e também orientar tutores com conteúdos educativos sobre cuidados, saúde e comportamento dos pets.<br><br>
       O projeto está sendo desenvolvido com HTML, CSS, JavaScript e Git, unindo tecnologia e empatia para criar uma solução prática, acessível e voltada ao amor pelos animais.
-      
     </p>
   </div>
-        <div>
-            <button class="btn-hp">Saiba como ajudar</button>
-            
+
+  <!-- Seção Desenvolvedores -->
+  <section class="dev-section">
+    <h3 class="dev-section__title">Desenvolvedores</h3>
+    <div class="dev-container">
+      <!-- Card 1 -->
+      <div class="dev-card">
+        <img src="/fotos/Joao.jpeg" alt="Foto de João Lopes" class="dev-card__img">
+        <h3 class="dev-card__name">João Lopes</h3>
+        <div class="dev-card__links">
+          <a href="https://www.linkedin.com/in/jplopes212" target="_blank" aria-label="LinkedIn João Lopes"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/jplopx" target="_blank" aria-label="GitHub João Lopes"><i class="fab fa-github"></i></a>
         </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="dev-card">
+        <img src="/fotos/nicolas.jpeg" alt="Foto de Nicolas Tavares" class="dev-card__img">
+        <h3 class="dev-card__name">Nicolas Tavares</h3>
+        <div class="dev-card__links">
+          <a href="https://www.linkedin.com/in/nicolas-tavares-b73935245" target="_blank" aria-label="LinkedIn Nicolas Tavares"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Nickous-Dev7" target="_blank" aria-label="GitHub Nicolas Tavares"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="dev-card">
+        <img src="/fotos/Rodrigo.jpeg" alt="Foto de Rodrigo Gago" class="dev-card__img">
+        <h3 class="dev-card__name">Rodrigo Gago</h3>
+        <div class="dev-card__links">
+          <a href="https://www.linkedin.com/in/rodrigo-de-oliveira-44966211b" target="_blank" aria-label="LinkedIn Rodrigo Gago"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Codrigo404" target="_blank" aria-label="GitHub Rodrigo Gago"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="dev-card">
+        <img src="/fotos/Ryan.jpeg" alt="Foto de Ryan" class="dev-card__img">
+        <h3 class="dev-card__name">Ryan Sales</h3>
+        <div class="dev-card__links">
+          <a href="https://www.linkedin.com/in/ryansales05" target="_blank" aria-label="LinkedIn Ryan Sales"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Ryansalesdev" target="_blank" aria-label="GitHub Ryan Sales"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Footer -->
-  <footer class="site-footer" aria-label="Rodapé do site">
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h4>Endereço</h4>
@@ -113,85 +159,138 @@
       </div>
     </div>
     <p class="copy">&copy; 2025 PetDex - Todos os direitos reservados.</p>
-    <div class="footer-social"></div>
+    <div class="footer-social">
+      <!-- Link do Instagram corrigido -->
+      <a href="https://instagram.com/petdex.site" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </footer>
 
   <!-- Scripts -->
   <script>
-    // Slider (mantido, mas com verificação de existência dos elementos)
-    document.addEventListener('DOMContentLoaded', () => {
-      const slides = document.querySelectorAll('.slide');
-      const dots = document.querySelectorAll('.dot');
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      let currentIndex = 0;
+    // Slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
 
-      function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        slides[index]?.classList.add('active');
-        dots[index]?.classList.add('active');
-      }
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
 
-      if (slides.length > 0) {
-        nextBtn?.addEventListener('click', () => {
-          currentIndex = (currentIndex + 1) % slides.length;
-          showSlide(currentIndex);
-        });
+    nextBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
 
-        prevBtn?.addEventListener('click', () => {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          showSlide(currentIndex);
-        });
+    prevBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
 
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide(currentIndex);
-          });
-        });
-      }
-
-      // Toggle Dark Theme com persistência
-      const themeToggle = document.getElementById('theme-toggle');
-      const icon = themeToggle?.querySelector('.theme-icon');
-
-      if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-        if (icon) icon.textContent = '☀️';
-      }
-
-      themeToggle?.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        const isDark = document.body.classList.contains('dark-theme');
-        if (icon) {
-          icon.textContent = isDark ? '☀️' : '🌙';
-        }
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        showSlide(currentIndex);
       });
+    });
+  </script>
 
-      // Filtro de cards (mantido, mas só executa se houver botões)
-      const buttons = document.querySelectorAll('.category-btn');
-      const cards = document.querySelectorAll('.card');
+  <script>
+    // Toggle Dark Theme com persistência
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle?.querySelector('.theme-icon');
+
+    // Carrega tema salvo
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      if (icon) icon.textContent = '☀️';
+    }
+
+    themeToggle?.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      const isDark = document.body.classList.contains('dark-theme');
+      
+      if (icon) {
+        icon.textContent = isDark ? '☀️' : '🌙';
+      }
+      
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+
+  <script>
+    // Filtro de cards
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".category-btn");
+      const cards = document.querySelectorAll(".card");
 
       function filterCards(category, activeButton) {
         cards.forEach(card => {
-          card.style.display = card.dataset.filter === category ? 'block' : 'none';
+          card.style.display = card.dataset.filter === category ? "block" : "none";
         });
-        buttons.forEach(btn => btn.classList.remove('active'));
-        activeButton.classList.add('active');
+
+        buttons.forEach(btn => btn.classList.remove("active"));
+        activeButton.classList.add("active");
       }
 
       buttons.forEach(button => {
-        button.addEventListener('click', function () {
+        button.addEventListener("click", function () {
           filterCards(this.dataset.category, this);
         });
       });
 
+      // Ativa "Cachorro" por padrão
       if (buttons[0]) {
         filterCards(buttons[0].dataset.category, buttons[0]);
       }
     });
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') navMenu.classList.remove('active');
+    });
+  }
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+});
+</script>
+
+
 </body>
 </html>
