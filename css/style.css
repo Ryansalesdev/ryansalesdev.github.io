@@ -309,6 +309,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: background-color var(--transition), border-color var(--transition);
     z-index: 9999;
+    list-style-type: none;
   }
   
   .dropdown-menu a {
