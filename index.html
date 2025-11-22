@@ -36,21 +36,25 @@
   <button type="submit"><i class="fas fa-search"></i></button>
 </div>
 
-      <!-- Botões na direita -->
-      <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle">
-          <span class="theme-icon">🌙</span>
-        </button>
-        <a href="/paginas/denuncia.html"  target="_blank" class="nome-denunciar">DENUNCIAR</a>
-        <div class="cadastro">
-       <a href="http://jplopx.github.io/"  target="_blank"class="nome-cadastrar">Cadastre-se</a>
-    </div>
-      </div>
+<div class="header-actions">
+  <span id="user-name" class="user-name"></span>
+  <button id="theme-toggle" class="theme-toggle">
+    <span class="theme-icon">🌙</span>
+  </button>
+  <a href="/paginas/denuncia.html" target="_blank" class="nome-denunciar">DENUNCIAR</a>
+  <button id="btn-open-cadastro" class="btn-cadastro">Cadastrar-se</button>
+  <button id="btn-open-login" class="btn-login">Login</button>
+  <button id="btn-editar" class="btn-edit" style="display:none;">Editar Perfil</button>
+  <button id="btn-sair" class="btn-logout" style="display:none;">Sair</button>
+</div>
+
+
+
     
   </header>
 
   <nav class="navbar">
-  <div class="container navbar-inner"> <!-- .navbar-inner para posição relativa local -->
+  <div class="container navbar-inner"> 
     <button class="menu-toggle" aria-label="Abrir menu">
       <i class="fas fa-bars"></i>
     </button>
@@ -61,9 +65,7 @@
       <li class="dropdown">
         <a href="#">ONGS <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="#">ONG AmeMais</a></li>
-          <li><a href="#">ONG LOVEPET</a></li>
-          <li><a href="#">ONG OSPETS</a></li>
+          <li><a href="/ongs.html" target="_blank">ONG Esperança animal</a></li>
         </ul>
       </li>
 
@@ -73,7 +75,6 @@
           <li><a href="/paginas/veterinaria.html" target="_blank">Clínica Dra. Ana Silva</a></li>
         </ul>
       </li>
-
       <li class="dropdown">
         <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
@@ -208,7 +209,6 @@
     </div>
     <p class="copy">&copy; 2025 PetDex - Todos os direitos reservados.</p>
     <div class="footer-social">
-      <!-- Link do Instagram corrigido -->
       <a href="https://instagram.com/petdex.site" target="_blank" aria-label="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
@@ -250,7 +250,7 @@
   </script>
 
   <script>
-    // Toggle Dark Theme com persistência
+    
     const themeToggle = document.getElementById('theme-toggle');
     const icon = themeToggle?.querySelector('.theme-icon');
 
@@ -293,7 +293,6 @@
         });
       });
 
-      // Ativa "Cachorro" por padrão
       if (buttons[0]) {
         filterCards(buttons[0].dataset.category, buttons[0]);
       }
@@ -338,7 +337,400 @@
   });
 });
 </script>
+<!-- ===========================
+      MODAL DE CADASTRO
+=========================== -->
+<div id="modal-cadastro" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-close">&times;</button>
+
+    <div class="container-modal">
+      <header>
+        <img src="/fotos/logo_petdex_1.png" class="header-icon" alt="Logo PetDex">
+        <h1>Cadastrar-se</h1>
+        <p>Insira seus dados nos campos abaixo para se cadastrar.</p>
+      </header>
+
+      <main>
+        <form action="#" method="post" id="modal-form">
+          
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+          </div>
+
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" required placeholder="Digite seu CPF">
+          </div>
+
+          <div class="form-group">
+            <label for="data-nascimento">Data de Nascimento</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu E-mail">
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required placeholder="Crie uma senha">
+          </div>
+
+          <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" required placeholder="Digite seu CEP" maxlength="9">
+          </div>
+
+          <div class="form-group">
+            <label for="logradouro">Rua</label>
+            <input type="text" id="logradouro" name="logradouro" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numero" required placeholder="Número da casa">
+          </div>
+
+          <div class="form-group">
+            <label for="complemento">Complemento</label>
+            <input type="text" id="complemento" name="complemento" placeholder="Apartamento, bloco...">
+          </div>
+
+          <div class="form-group">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="uf">UF</label>
+            <select id="uf" name="uf" disabled>
+              <option value=""></option>
+              <option value="RJ">RJ</option>
+              <option value="SP">SP</option>
+              <option value="MG">MG</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">Confirmar Cadastro</button>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>
+<!-- ===========================
+          MODAL DE LOGIN
+=========================== -->
+<div id="modal-login" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-close">&times;</button>
+
+    <div class="container-modal">
+      <header>
+        <img src="/fotos/logo_petdex_1.png" class="header-icon" alt="Logo PetDex">
+        <h1>Login</h1>
+        <p>Entre com seu e-mail e senha.</p>
+      </header>
+
+      <main>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" required placeholder="Digite seu email">
+          </div>
+
+          <div class="form-group">
+            <label for="login-senha">Senha</label>
+            <input type="password" id="login-senha" required placeholder="Digite sua senha">
+          </div>
+
+          <button type="submit" class="btn-submit">Entrar</button>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-editar">
+  <div class="modal">
+    <h2>Editar Perfil</h2>
+
+    <div class="input-group">
+      <label for="editar-nome">Nome</label>
+      <input type="text" id="editar-nome">
+    </div>
+
+    <div class="input-group">
+      <label for="editar-email">Email</label>
+      <input type="email" id="editar-email">
+    </div>
+
+    <div class="input-group">
+      <label for="editar-senha">Nova Senha</label>
+      <input type="password" id="editar-senha">
+    </div>
+
+    <button id="salvar-edicao" class="btn-edit">Salvar</button>
+    <button id="fechar-editar" class="btn-logout">Cancelar</button>
+  </div>
+</div>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal-cadastro");
+  const openBtn = document.getElementById("btn-open-cadastro");
+  const closeBtn = modal.querySelector(".modal-close");
+
+  function openModal() {
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+    const firstInput = modal.querySelector("input, select, textarea");
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  // abrir modal
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  // fechar modal (botão X)
+  closeBtn.addEventListener("click", closeModal);
+
+  // fechar clicando fora
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // fechar com ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+});
+</script>
+<script>
+// máscara CPF
+document.getElementById("cpf").addEventListener("input", function(e) {
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length > 11) v = v.slice(0, 11);
+
+    if (v.length <= 3) {}
+    else if (v.length <= 6)
+        v = `${v.slice(0,3)}.${v.slice(3)}`;
+    else if (v.length <= 9)
+        v = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6)}`;
+    else
+        v = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6,9)}-${v.slice(9,11)}`;
+
+    e.target.value = v;
+});
+
+// máscara CEP
+document.getElementById("cep").addEventListener("input", function (e) {
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length > 5) v = v.slice(0,5) + "-" + v.slice(5,8);
+    e.target.value = v;
+});
+
+// busca CEP
+document.getElementById("cep").addEventListener("blur", async function () {
+    const cep = this.value.replace(/\D/g, "");
+    if (cep.length !== 8) return;
+
+    try {
+        const r = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        const d = await r.json();
+
+        if (!d.erro) {
+            document.getElementById("logradouro").value = d.logradouro;
+            document.getElementById("bairro").value = d.bairro;
+            document.getElementById("cidade").value = d.localidade;
+            document.getElementById("uf").value = d.uf;
+            document.getElementById("logradouro").disabled = false;
+            document.getElementById("bairro").disabled = false;
+            document.getElementById("cidade").disabled = false;
+            document.getElementById("uf").disabled = false;
+        }
+    } catch {
+        alert("Erro ao buscar o CEP.");
+    }
+});
+</script>
+ // SALVAR CADASTRO NO LOCALSTORAGE
+ <script>
+document.getElementById("modal-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const usuario = {
+    nome: document.getElementById("nome").value,
+    cpf: document.getElementById("cpf").value,
+    nascimento: document.getElementById("data-nascimento").value,
+    email: document.getElementById("email").value,
+    cep: document.getElementById("cep").value,
+    logradouro: document.getElementById("logradouro").value,
+    numero: document.getElementById("numero").value,
+    complemento: document.getElementById("complemento").value,
+    bairro: document.getElementById("bairro").value,
+    cidade: document.getElementById("cidade").value,
+    uf: document.getElementById("uf").value,
+    senha: document.getElementById("senha").value // ← AGORA CORRETO!
+  };
+
+  localStorage.setItem("usuario", JSON.stringify(usuario));
+
+  alert("Cadastro concluído!");
+  document.getElementById("modal-cadastro").style.display = "none";
+});
+</script>
+
+<script>
+document.getElementById("login-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const email = document.getElementById("login-email").value;
+  const senha = document.getElementById("login-senha").value;
+
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+  if (!usuario) {
+    alert("Nenhum cadastro encontrado.");
+    return;
+  }
+
+  if (email === usuario.email && senha === usuario.senha) {
+    
+    localStorage.setItem("logado", "true");
+    localStorage.setItem("userLogged", JSON.stringify(usuario));
+
+    alert("Login realizado!");
+
+    document.getElementById("modal-login").style.display = "none";
+    document.body.style.overflow = "";
+
+    // Mostrar botões corretos
+    document.getElementById("btn-editar").style.display = "inline-block";
+    document.getElementById("btn-sair").style.display = "inline-block";
+
+    // Esconder botões de login/cadastro
+    document.getElementById("btn-open-login").style.display = "none";
+    document.getElementById("btn-open-cadastro").style.display = "none";
+
+    atualizarTopoUsuario();
+
+  } else {
+    alert("Email ou senha incorretos!");
+  }
+});
+
+</script>
+<script>
+const loginModal = document.getElementById("modal-login");
+const openLogin = document.getElementById("btn-open-login");
+const closeLogin = loginModal.querySelector(".modal-close");
+
+// abrir
+openLogin.addEventListener("click", () => {
+  loginModal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+});
+
+// fechar
+closeLogin.addEventListener("click", () => {
+  loginModal.style.display = "none";
+  document.body.style.overflow = "";
+});
+
+// clicar fora
+loginModal.addEventListener("click", (e) => {
+  if (e.target === loginModal) {
+    loginModal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+});
+</script>
+<script>
+// Mostrar nome do usuário logado no topo
+const userSpan = document.getElementById("user-name");
+const userData = JSON.parse(localStorage.getItem("usuario"));
+const logado = localStorage.getItem("logado");
+
+if (logado === "true" && userData) {
+  userSpan.textContent = "Olá, " + userData.nome.split(" ")[0] + " 👋";
+}
+</script>
+
+<script>
+function atualizarTopoUsuario() {
+  const user = JSON.parse(localStorage.getItem("userLogged"));
+  const loginBtn = document.getElementById("btn-open-login");
+  const cadastroBtn = document.getElementById("btn-open-cadastro");
+  const userSpan = document.getElementById("user-name");
+
+  if (user) {
+    userSpan.textContent = "Olá, " + user.nome.split(" ")[0] + " 👋";
+    loginBtn.style.display = "none";
+    cadastroBtn.style.display = "none";
+    document.getElementById("btn-editar").style.display = "inline-block";
+    document.getElementById("btn-sair").style.display = "inline-block";
+  }
+}
+
+</script>
+<script>
+  document.getElementById("btn-sair").addEventListener("click", () => {
+  localStorage.removeItem("logado");
+  localStorage.removeItem("userLogged");
+
+  alert("Você saiu da sua conta!");
+
+  location.reload(); // atualiza topo automaticamente
+});
+
+</script>
+<script>
+  document.getElementById("btn-editar").addEventListener("click", () => {
+  const user = JSON.parse(localStorage.getItem("userLogged"));
+
+  document.getElementById("editar-nome").value = user.nome;
+  document.getElementById("editar-email").value = user.email;
+  document.getElementById("editar-senha").value = user.senha;
+
+  document.getElementById("modal-editar").style.display = "flex";
+});
+
+</script>
+<script>
+ document.getElementById("salvar-edicao").addEventListener("click", () => {
+
+  const nome = document.getElementById("editar-nome").value;
+  const email = document.getElementById("editar-email").value;
+  const senha = document.getElementById("editar-senha").value;
+
+  const novoUsuario = { ...JSON.parse(localStorage.getItem("usuario")), nome, email, senha };
+
+  // Atualiza ambas as chaves
+  localStorage.setItem("usuario", JSON.stringify(novoUsuario));
+  localStorage.setItem("userLogged", JSON.stringify(novoUsuario));
+
+  alert("Dados atualizados!");
+
+  document.getElementById("modal-editar").style.display = "none";
+  atualizarTopoUsuario();
+});
+
+
+</script>
 </body>
 </html>

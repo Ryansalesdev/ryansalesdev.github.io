@@ -185,6 +185,7 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   list-style: none;
   z-index: 1000;
+  list-style-type: none;
 }
 
 .dropdown-menu li {
@@ -346,9 +347,7 @@ body.dark-theme .theme-toggle {
   font-size: 1.5rem;
 }
 
-/* ===========================
-   UTILITÁRIOS (Botões genéricos - mantidos por compatibilidade)
-=========================== */
+
 .btn,
 .nome-denunciar {
   background-color: var(--primary);

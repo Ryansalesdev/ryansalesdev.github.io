@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área Logada - PetDex</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <h2>Bem-vindo à sua Área Logada</h2>
+    <span id="nomeUsuario" class="user-welcome"></span>
+
+    <button id="logout" class="btn-login" style="background: red; color: #fff;">
+      Sair
+    </button>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Seus Dados</h1>
+
+  <div id="dados-usuario" class="dados-box"></div>
+</main>
+
+<script>
+// Verificar login
+if (localStorage.getItem("logado") !== "true") {
+  window.location.href = "/index.html";
+}
+
+const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+// Exibir nome no topo
+document.getElementById("nomeUsuario").textContent =
+  "Olá, " + usuario.nome.split(" ")[0] + "!";
+
+// Exibir dados completos
+document.getElementById("dados-usuario").innerHTML = `
+  <p><strong>Nome:</strong> ${usuario.nome}</p>
+  <p><strong>Email:</strong> ${usuario.email}</p>
+  <p><strong>CPF:</strong> ${usuario.cpf}</p>
+  <p><strong>Cidade:</strong> ${usuario.cidade}</p>
+  <p><strong>Bairro:</strong> ${usuario.bairro}</p>
+  <p><strong>Endereço:</strong> ${usuario.logradouro}, ${usuario.numero}</p>
+`;
+
+// Logout
+document.getElementById("logout").addEventListener("click", () => {
+  localStorage.setItem("logado", "false");
+  window.location.href = "/index.html";
+});
+</script>
+
+</body>
+</html>

@@ -1,37 +1,33 @@
-
 /* ===========================
    RESET E VARIÁVEIS
 =========================== */
-
-  :root {
-  --primary: #f7882f;
-  --accent: #f7882f;
-  --light-bg: #f9f9f9;
-  --dark-bg: #121212;
-  --text-color: #333;           /* texto principal */
-  --text-muted: #627384;        /* essa é a cor que você quer no modo claro! */
-  --navbar-bg: #f1f1f1;
-  --header-bg: #fff;
-  --footer-bg: var(--light-bg);
-  --dropdown-bg: #fff;
-  --dropdown-border: #ddd;
-  --transition: 0.3s ease;
-  --conteudo-texto: #627384;   
-}
+:root {
+    --primary: #f7882f; /*topo do site */
+    --accent: #f7882f; /*botão de inicio */
+    --light-bg: #f9f9f9; /*background do site */
+    --dark-bg: #121212; 
+    --text-color: #333;   /*Cores do card (PET DICAS) */
+    --text-muted: #6b7a8f; /*Cores do card (PET DICAS) */
+    --card-bg: #fff;
+    --navbar-bg: #f1f1f1;
+    --header-bg: #fff;
+    --footer-bg: var(--light-bg);
+    --dropdown-bg: #fff;
+    --dropdown-border: #ddd;
+    --transition: 0.3s ease;
+  }
   
   /* Modo escuro */
   body.dark-theme {
     --light-bg: #121212;
     --text-color: #f1f1f1;
     --text-muted: #bbb;
+    --card-bg: #1e1e1e;
     --navbar-bg: #1a1a1a;
     --header-bg: #1a1a1a;
     --footer-bg: #1a1a1a;
     --dropdown-bg: #222;
     --dropdown-border: #333;
-    --conteudo-texto:#fff
-
-  
   }
   
   * {
@@ -120,76 +116,7 @@
     font-size: 0.875rem;
     color: var(--text-muted);
   }
-  
-  /* Barra de pesquisa - modo claro */
-  .search-bar {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 350px;
-    border-radius: 50px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 0 0 2px #f7882f; /* borda laranja */
-  }
-  
-  .search-bar input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 12px 15px;
-    font-size: 15px;
-    color: #333;
-    background: transparent;
-  }
-  
-  .search-bar input::placeholder {
-    color: #aaa;
-    font-style: italic;
-  }
-  
-  .search-bar button {
-    background: #f7882f;
-    border: none;
-    padding:  20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .search-bar button:hover {
-    background: #d15700;
-  }
-  
-  .search-bar button i {
-    color: #fff;
-    font-size: 16px;
-  }
-  
-  /* Barra de pesquisa - modo escuro */
-  body.dark-theme .search-bar {
-    background: #1e1e1e; /* fundo da barra */
-    box-shadow: 0 0 0 2px #f7882f; /* mantém a borda laranja */
-  }
-  
-  body.dark-theme .search-bar input {
-    color: #f1f1f1; /* texto claro */
-  }
-  
-  body.dark-theme .search-bar input::placeholder {
-    color: #888; 
-  }
-  
-  body.dark-theme .search-bar button {
-    background: #f7882f; /* botão ainda laranja */
-  }
-  
-  body.dark-theme .search-bar button:hover {
-    background: #d96c1f;
-  }
-  
+   
   .cadastro{
       background-color: var(--primary);
     color: #fff;
@@ -217,9 +144,7 @@
   
   .nome-cadastrar{
     text-decoration: none;
-    color:#fff
-    
-    
+    color:#fff 
   }
   
   .btn,
@@ -348,20 +273,121 @@
   .social-icons a:hover {
     color: var(--accent);
   }
-
-
-  /* CONTEUDO DA PAGINA (TEXTOS)*/
-
-.conteudo-texto{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: var(--conteudo-texto);
-
-}
   
+  /* ===========================
+   Seção Sobre Nós
+=========================== */
+.titulo h1 {
+  
+  background-color: var(--h1-container);
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #d96c1f;
+  font-size: 25px;
+  line-height: 1.3;
+  margin: 0;
+}
+.h1-container {
+  background-color: var(--h1-container-bg);
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.titulo {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #d96c1f;
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.element-text {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #627384;
+  font-size: 20px;
+}
+/* ===========================
+   Seção Desenvolvedores (cards)
+=========================== */
+.dev-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--light-bg);
+}
+
+.dev-section__title {
+  color: #d96c1f;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.dev-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dev-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: 240px;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.dev-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.dev-card__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.dev-card__name {
+  margin-bottom: 12px;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.dev-card__links a {
+  color: var(--text-color);
+  margin: 0 8px;
+  font-size: 1.4rem;
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.dev-card__links a:hover {
+  color: #d96c1f;
+}
+
+/* Responsivo tela menor */
+@media (max-width: 768px) {
+  .dev-container {
+    gap: 20px;
+  }
+  .dev-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
   /* ===========================
      FOOTER
   =========================== */
@@ -414,16 +440,13 @@
   }
   
   /* ===========================
-     BOTÃO MODO DARK
+           BOTÃO MODO DARK
   =========================== */
   .theme-toggle {
-    position: fixed;
-    bottom: clamp(1rem, 4vw, 2rem);
-    right: clamp(1rem, 4vw, 1rem);
-    width: clamp(40px, 8vw, 56px);
-    height: clamp(40px, 8vw, 56px);
+    width: clamp(40px, 8vw, 40px);
+    height: clamp(40px, 8vw, 40px);
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #f7882f;
     border: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -517,7 +540,6 @@
     background: #f1f1f1;
   }
   
-  
   /* ===========================
      HEADER ACTIONS
   =========================== */
@@ -533,7 +555,7 @@
   
    @media (max-width: 768px) {
     .logo {
-      margin-bottom: 0px; /* Removendo margem extra de baixo do logo */
+      margin-bottom: 0px; 
     }
     
   }
@@ -541,38 +563,29 @@
       AJUSTE DE ORGANIZAÇÃO DO HEADER (MOBILE)
   =========================== */
   @media (max-width: 768px) {
-      /* Container para os botões 'DENUNCIAR' e 'Cadastre-se' */
-      .header-actions-mobile {
+        .header-actions-mobile {
           display: flex;
-          justify-content: center; /* Centraliza o bloco de botões */
-          gap: 10px; /* Espaço entre os botões */
-          width: 100%; /* Ocupa toda a largura */
-          margin-top: 10px; /* Adiciona um espaço abaixo da barra de pesquisa */
-          margin-bottom: 5px; /* Espaço antes da navbar */
-      }
+          justify-content: center; 
+          gap: 10px; 
+          width: 100%; 
+          margin-top: 10px; 
+          margin-bottom: 5px;   
+        }
       
-      /* Faz os botões ficarem com largura flexível (opcional, dependendo do design) */
       .cadastro,
       .nome-denunciar {
-          width: 48%; /* Ocupa metade da largura do container, dando espaço para o gap */
+          width: 48%; 
           flex-grow: 1;
           text-align: center;
       }
-  
-      /* Redefine a organização do topo para melhor espaçamento */
+
       .header-container {
           flex-direction: column;
           align-items: center;
           gap: 0.75rem;
-          padding: 0 1rem; /* Adiciona padding lateral para garantir que não grude na borda */
+          padding: 0 1rem; 
       }
-  
-      .search-bar {
-          width: 100%; 
-          max-width: 100%;
-          flex-direction: row; 
-      }
- 
+        
 }
 /* Botão hamburguer - escondido no desktop */
 .menu-toggle {
@@ -582,12 +595,13 @@
   font-size: 28px;
   color: var(--text-color);
   cursor: pointer;
+  left: 400px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block; /* aparece só no mobile */
+    display: block; 
     position: absolute;
     top: 15px;
     right: 20px;
@@ -595,10 +609,9 @@
   }
 
   .nav-menu {
-    display: none; /* esconde a lista */
+    display: none; 
     position: absolute;
-    top: 60px; /* logo abaixo da navbar */
-    left: 0;
+    top: 60px;     left: 0;
     width: 100%;
     flex-direction: column;
     background: var(--navbar-bg);
@@ -608,7 +621,7 @@
   }
 
   .nav-menu.active {
-    display: flex; /* aparece ao clicar no hamburguer */
+    display: flex; 
   }
 
   /* Dropdown no mobile abre com clique */
@@ -623,13 +636,10 @@
     flex-direction: column;
   }
 }
-/* ======= Ajustes menu hamburguer (cole no final do style.css) ======= */
-/* garante que a navbar fique acima do banner e que dropdowns apareçam */
 .navbar {
   position: relative;
   z-index: 9999;
-  overflow: visible; /* sobrescreve overflow:auto que causava scroll */
-}
+  overflow: visible; }
 
 .navbar .navbar-inner {
   position: relative;
@@ -730,7 +740,6 @@
   }
 }
 
-/* Desktop: hover continua abrindo dropdown */
 @media (min-width: 769px) {
   .dropdown:hover > .dropdown-menu {
     display: block;

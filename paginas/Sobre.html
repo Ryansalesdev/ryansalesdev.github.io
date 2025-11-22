@@ -16,7 +16,7 @@
       <div class="left">
         <a href="/index.html">Inicio</a> |
         <a href="/paginas/help.html">Help</a> |
-        <a href="#contato">Contato</a>
+        <a href="#">Contato</a>
       </div>
     </div>
   </div>
@@ -58,21 +58,19 @@
       <li class="dropdown">
         <a href="#">ONGS <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="#">ONG AmeMais</a></li>
-          <li><a href="#">ONG LOVEPET</a></li>
-          <li><a href="#">ONG OSPETS</a></li>
+          <li><a href="/ongs.html">ONG Esperança Animal</a></li>
         </ul>
       </li>
 
       <li class="dropdown">
         <a href="#">VETERINÁRIOS <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="/paginas/veterinaria.html" target="_blank">Clínica Dra. Ana Silva</a></li>
+          <li><a href="/paginas/veterinaria.html">Clínica Dra. Ana Silva</a></li>
         </ul>
       </li>
 
       <li class="dropdown">
-        <a href="/paginas/linox.html" target="_blank">PetShop Linox <i class="fas fa-chevron-down"></i></a>
+        <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
           <li><a href="#">Pets Shop RJ</a></li>
         </ul>
@@ -112,7 +110,7 @@
       </div>
       <!-- Card 2 -->
       <div class="dev-card">
-        <img src="/fotos/nicolas.jpeg" alt="Foto de Nicolas Tavares" class="dev-card__img">
+        <img src="/fotos/Nicolas.jpeg" alt="Foto de Nicolas Tavares" class="dev-card__img">
         <h3 class="dev-card__name">Nicolas Tavares</h3>
         <div class="dev-card__links">
           <a href="https://www.linkedin.com/in/nicolas-tavares-b73935245" target="_blank" aria-label="LinkedIn Nicolas Tavares"><i class="fab fa-linkedin"></i></a>
@@ -121,7 +119,7 @@
       </div>
       <!-- Card 3 -->
       <div class="dev-card">
-        <img src="/fotos/Rodrigo.jpeg" alt="Foto de Rodrigo Gago" class="dev-card__img">
+        <img src="/fotos/rodrigo.jpeg" alt="Foto de Rodrigo Gago" class="dev-card__img">
         <h3 class="dev-card__name">Rodrigo Gago</h3>
         <div class="dev-card__links">
           <a href="https://www.linkedin.com/in/rodrigo-de-oliveira-44966211b" target="_blank" aria-label="LinkedIn Rodrigo Gago"><i class="fab fa-linkedin"></i></a>
@@ -130,7 +128,7 @@
       </div>
       <!-- Card 4 -->
       <div class="dev-card">
-        <img src="/fotos/Ryan.jpeg" alt="Foto de Ryan" class="dev-card__img">
+        <img src="/fotos/ryan.jpeg" alt="Foto de Ryan" class="dev-card__img">
         <h3 class="dev-card__name">Ryan Sales</h3>
         <div class="dev-card__links">
           <a href="https://www.linkedin.com/in/ryansales05" target="_blank" aria-label="LinkedIn Ryan Sales"><i class="fab fa-linkedin"></i></a>
@@ -141,7 +139,7 @@
   </section>
   
   <!-- Footer -->
-  <footer class="site-footer" id="contato">
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h4>Endereço</h4>
@@ -202,7 +200,6 @@
   </script>
 
   <script>
-    // Toggle Dark Theme com persistência
     const themeToggle = document.getElementById('theme-toggle');
     const icon = themeToggle?.querySelector('.theme-icon');
 
@@ -245,7 +242,7 @@
         });
       });
 
-      // Ativa "Cachorro" por padrão
+      
       if (buttons[0]) {
         filterCards(buttons[0].dataset.category, buttons[0]);
       }

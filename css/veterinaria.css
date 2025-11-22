@@ -1,10 +1,10 @@
     /* --- VARIÁVEIS DE DESIGN --- */
     :root {
-      --primary: #2277ac;
+      --primary: #ffffff;
       --primary-dark: #d4780e;
       --background: #f9fbf9;
       --text: #000000;
-      --light-gray: #87CEFA;
+      --light-gray: #2277ac;
       --dark-gray: rgb(255, 255, 255);
       --white: #fff;
       --transition: all 0.3s ease;
@@ -43,9 +43,9 @@
       margin-bottom: 15px;
     }
 
-    h1 { font-size: 2.2rem; text-align: center; }
-    h2 { font-size: 1.8rem; text-align: center; }
-    h3 { text-align: center; margin: 30px 0 15px; }
+    h1 { font-size: 2.2rem; text-align: center; color:#2277ac; }
+    h2 { font-size: 1.8rem; text-align: center;  }
+    h3 { text-align: center; margin: 30px 0 15px; color:#2277ac;}
 
     p {
       margin-bottom: 15px;
@@ -54,7 +54,7 @@
 
     /* --- TOP BAR --- */
     .top-bar {
-      background-color: var(--primary);
+      background-color: #2277ac;
       padding: 0.625rem 0;
       font-size: 0.875rem;
       color: var(--white);
@@ -113,7 +113,7 @@
 
     .stat-label {
       font-size: 1rem;
-      color: #555;
+      color: #ffffff;
     }
 
     /* --- SERVIÇOS E ESPECIALIDADES --- */
@@ -125,6 +125,7 @@
       text-align: center;
       margin-bottom: 30px;
       position: relative;
+      color:#2277ac;
     }
 
     .section-title::after {
@@ -143,7 +144,7 @@
       justify-content: center;
       gap: 20px;
       margin-top: 20px;
-      padding: 0 10px; /* espaçamento lateral */
+      padding: 0 10px; 
     }
 
     .card {

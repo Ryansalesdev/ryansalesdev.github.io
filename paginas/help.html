@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Help</title>
+  <title>PetDex</title>
   <link rel="stylesheet" href="/css/help.css" />
+  <!-- Font Awesome CDN (corrigido) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
+
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container">
       <div class="left">
-        <a href="/paginas/Sobre.html">Sobre nós</a> |
+        <a href="/paginas/Sobre.html">Sobre Nós</a> |
         <a href="/paginas/help.html">Help</a> |
-        <a href="#contato">Contato</a>
+        <a href="#">Contato</a>
       </div>
     </div>
   </div>
@@ -23,48 +25,63 @@
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <img src="/fotos/logo.png" alt="PetDex Logo" loading="lazy" />
-        <p>Um lar para cada patinha</p>
+        <img src="/fotos/logo.png" alt="PetDex Logo" />
+        <div class="p">
+          <p>Um lar para cada patinha</p> 
+        </div>
       </div>
+
+<div class="search-bar">
+  <input type="text" placeholder="Buscar...">
+  <button type="submit"><i class="fas fa-search"></i></button>
+</div>
+
+      <!-- Botões na direita -->
       <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <button id="theme-toggle" class="theme-toggle">
           <span class="theme-icon">🌙</span>
         </button>
-        <button id="cadastro" class="cadastro">Cadastrar</button>
-      </div>
+        <a href="/paginas/denuncia.html"  target="_blank" class="nome-denunciar">DENUNCIAR</a>
+        <button id="btn-open-cadastro" class="btn-cadastro">Cadastrar-se</button>
+
     </div>
+      </div>
+    
   </header>
 
-  <!-- Navbar -->
-  <nav class="navbar" aria-label="Navegação principal">
-    <div class="container">
-      <ul class="nav-menu">
-        <li><a href="/index.html">INICIO</a></li>
-        <li class="dropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false">ONGs <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">ONG AmeMais</a></li>
-            <li><a href="#">ONG LOVEPET</a></li>
-            <li><a href="#">ONG OSPETS</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false">VETERINÁRIOS <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="/paginas/veterinaria.html" target="_blank">Clínica Dra. Ana Silva</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false">Pet Shops <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="/paginas/linox.html" target="_blank">PetShop Linox</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <nav class="navbar">
+  <div class="container navbar-inner"> 
+    <button class="menu-toggle" aria-label="Abrir menu">
+      <i class="fas fa-bars"></i>
+    </button>
 
-  <section class="h1-container">
+    <ul class="nav-menu">
+      <li><a href="/index.html" class="active">INICIO</a></li>
+
+      <li class="dropdown">
+        <a href="#">ONGS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/ongs.html">ONG Esperança animal</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">VETERINÁRIOS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/paginas/veterinaria.html" target="_blank">Clínica Dra. Ana Silva</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/paginas/linox.html" target="_blank">PetShop Linox</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="h1-container">
     <div class="container">
       <div class="titulo">
         <h1>Ajude um PETDEX a transformar vidas <br> uma patinha de cada vez!</h1>
@@ -89,12 +106,10 @@
       Transformando o mundo, uma adoção de cada vez. 🐾
     </p>
   </div>
-        <div>
-            <button class="btn-hp">Saiba como ajudar</button>
-            
-        </div>
+
+
   <!-- Footer -->
-  <footer class="site-footer" aria-label="Rodapé do site" id="contato">
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h4>Endereço</h4>
@@ -112,85 +127,248 @@
       </div>
     </div>
     <p class="copy">&copy; 2025 PetDex - Todos os direitos reservados.</p>
-    <div class="footer-social"></div>
+    <div class="footer-social">
+      <a href="https://instagram.com/petdex.site" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </footer>
 
-  <!-- Scripts -->
+  
+
   <script>
-    // Slider (mantido, mas com verificação de existência dos elementos)
-    document.addEventListener('DOMContentLoaded', () => {
-      const slides = document.querySelectorAll('.slide');
-      const dots = document.querySelectorAll('.dot');
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      let currentIndex = 0;
+    
+    const themeToggle = document.getElementById('theme-toggle');
+    const icon = themeToggle?.querySelector('.theme-icon');
 
-      function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        slides[index]?.classList.add('active');
-        dots[index]?.classList.add('active');
+    // Carrega tema salvo
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      if (icon) icon.textContent = '☀️';
+    }
+
+    themeToggle?.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      const isDark = document.body.classList.contains('dark-theme');
+      
+      if (icon) {
+        icon.textContent = isDark ? '☀️' : '🌙';
       }
-
-      if (slides.length > 0) {
-        nextBtn?.addEventListener('click', () => {
-          currentIndex = (currentIndex + 1) % slides.length;
-          showSlide(currentIndex);
-        });
-
-        prevBtn?.addEventListener('click', () => {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          showSlide(currentIndex);
-        });
-
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide(currentIndex);
-          });
-        });
-      }
-
-      // Toggle Dark Theme com persistência
-      const themeToggle = document.getElementById('theme-toggle');
-      const icon = themeToggle?.querySelector('.theme-icon');
-
-      if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-        if (icon) icon.textContent = '☀️';
-      }
-
-      themeToggle?.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        const isDark = document.body.classList.contains('dark-theme');
-        if (icon) {
-          icon.textContent = isDark ? '☀️' : '🌙';
-        }
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      });
-
-      // Filtro de cards (mantido, mas só executa se houver botões)
-      const buttons = document.querySelectorAll('.category-btn');
-      const cards = document.querySelectorAll('.card');
-
-      function filterCards(category, activeButton) {
-        cards.forEach(card => {
-          card.style.display = card.dataset.filter === category ? 'block' : 'none';
-        });
-        buttons.forEach(btn => btn.classList.remove('active'));
-        activeButton.classList.add('active');
-      }
-
-      buttons.forEach(button => {
-        button.addEventListener('click', function () {
-          filterCards(this.dataset.category, this);
-        });
-      });
-
-      if (buttons[0]) {
-        filterCards(buttons[0].dataset.category, buttons[0]);
-      }
+      
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
   </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') navMenu.classList.remove('active');
+    });
+  }
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+});
+</script>
+<!-- ===========================
+      MODAL DE CADASTRO
+=========================== -->
+<div id="modal-cadastro" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-close">&times;</button>
+
+    <div class="container-modal">
+      <header>
+        <img src="/fotos/logo_petdex_1.png" class="header-icon" alt="Logo PetDex">
+        <h1>Cadastrar-se</h1>
+        <p>Insira seus dados nos campos abaixo para se cadastrar.</p>
+      </header>
+
+      <main>
+        <form action="#" method="post" id="modal-form">
+          
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+          </div>
+
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" required placeholder="Digite seu CPF">
+          </div>
+
+          <div class="form-group">
+            <label for="data-nascimento">Data de Nascimento</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu E-mail">
+          </div>
+
+          <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" required placeholder="Digite seu CEP" maxlength="9">
+          </div>
+
+          <div class="form-group">
+            <label for="logradouro">Rua</label>
+            <input type="text" id="logradouro" name="logradouro" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numero" required placeholder="Número da casa">
+          </div>
+
+          <div class="form-group">
+            <label for="complemento">Complemento</label>
+            <input type="text" id="complemento" name="complemento" placeholder="Apartamento, bloco...">
+          </div>
+
+          <div class="form-group">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="uf">UF</label>
+            <select id="uf" name="uf" disabled>
+              <option value=""></option>
+              <option value="RJ">RJ</option>
+              <option value="SP">SP</option>
+              <option value="MG">MG</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">Confirmar Cadastro</button>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal-cadastro");
+  const openBtn = document.getElementById("btn-open-cadastro");
+  const closeBtn = modal.querySelector(".modal-close");
+
+  function openModal() {
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+    const firstInput = modal.querySelector("input, select, textarea");
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  // abrir modal
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  // fechar modal (botão X)
+  closeBtn.addEventListener("click", closeModal);
+
+  // fechar clicando fora
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // fechar com ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+});
+</script>
+<script>
+// máscara CPF
+document.getElementById("cpf").addEventListener("input", function(e) {
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length > 11) v = v.slice(0, 11);
+
+    if (v.length <= 3) {}
+    else if (v.length <= 6)
+        v = `${v.slice(0,3)}.${v.slice(3)}`;
+    else if (v.length <= 9)
+        v = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6)}`;
+    else
+        v = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6,9)}-${v.slice(9,11)}`;
+
+    e.target.value = v;
+});
+
+// máscara CEP
+document.getElementById("cep").addEventListener("input", function (e) {
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length > 5) v = v.slice(0,5) + "-" + v.slice(5,8);
+    e.target.value = v;
+});
+
+// busca CEP
+document.getElementById("cep").addEventListener("blur", async function () {
+    const cep = this.value.replace(/\D/g, "");
+    if (cep.length !== 8) return;
+
+    try {
+        const r = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        const d = await r.json();
+
+        if (!d.erro) {
+            document.getElementById("logradouro").value = d.logradouro;
+            document.getElementById("bairro").value = d.bairro;
+            document.getElementById("cidade").value = d.localidade;
+            document.getElementById("uf").value = d.uf;
+            document.getElementById("logradouro").disabled = false;
+            document.getElementById("bairro").disabled = false;
+            document.getElementById("cidade").disabled = false;
+            document.getElementById("uf").disabled = false;
+        }
+    } catch {
+        alert("Erro ao buscar o CEP.");
+    }
+});
+</script>
+
+
 </body>
 </html>

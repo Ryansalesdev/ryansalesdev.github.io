@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Denunciar Maus-Tratos | PetDex</title>
+  <title>PetDex</title>
   <link rel="stylesheet" href="/css/denuncia.css" />
+  <!-- Font Awesome CDN (corrigido) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
+
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container">
-      <div class="top-bar-links">
-        <a href="/paginas/Sobre.html">Sobre nós</a>
-        <a href="/paginas/help.html">Help</a>
-        <a href="#contato">Contato</a>
+      <div class="left">
+        <a href="/index.html">Inicio</a> |
+        <a href="/paginas/help.html">Help</a> |
+        <a href="#">Contato</a>
       </div>
     </div>
   </div>
@@ -29,55 +31,55 @@
         </div>
       </div>
 
-<div class="search-bar">
-  <input type="text" placeholder="Buscar...">
-  <button type="submit"><i class="fas fa-search"></i></button>
-</div>
+
 
       <!-- Botões na direita -->
       <div class="header-actions">
         <button id="theme-toggle" class="theme-toggle">
           <span class="theme-icon">🌙</span>
         </button>
-        <a href="#" class="nome-denunciar">DENUNCIAR</a>
+        <a href="/paginas/denuncia.html"  target="_blank" class="nome-denunciar">DENUNCIAR</a>
         <div class="cadastro">
-       <a href="http://jplopx.github.io/" class="nome-cadastrar">Cadastre-se</a>
+       <a href="http://jplopx.github.io/"  target="_blank"class="nome-cadastrar">Cadastre-se</a>
     </div>
       </div>
     
   </header>
 
-  <!-- Navbar -->
   <nav class="navbar">
-    <div class="container">
-      <ul class="nav-menu">
-        <li><a href="/index.html">INICIO</a></li>
-        <li class="dropdown">
-          <a href="#">ONGs <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">ONG AmeMais</a></li>
-            <li><a href="#">ONG LOVEPET</a></li>
-            <li><a href="#">ONG OSPETS</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">VETERINÁRIOS <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="/paginas/veterinaria.html" target="_blank">Clínica Dra. Ana Silva</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="/paginas/linox.html" target="_blank">PetShop Linox</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="container navbar-inner"> <!-- .navbar-inner para posição relativa local -->
+    <button class="menu-toggle" aria-label="Abrir menu">
+      <i class="fas fa-bars"></i>
+    </button>
 
-  <!-- Conteúdo Principal -->
-  <main class="conteudo-texto">
+    <ul class="nav-menu">
+      <li><a href="/index.html" class="active">INICIO</a></li>
+
+      <li class="dropdown">
+        <a href="#">ONGS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/ongs.html">ONG Esperança Animal</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">VETERINÁRIOS <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/paginas/veterinaria.html">Clínica Dra. Ana Silva</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Pet Shops <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Pets Shop RJ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
     <div class="container">
       <h1>Denuncie Maus-Tratos ou Abandono</h1>
       <p>
@@ -99,10 +101,10 @@
 
       
     </div>
-  </main>
 
- <!-- Footer -->
-  <footer class="site-footer" id="contato">
+ 
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h4>Endereço</h4>
@@ -121,17 +123,52 @@
     </div>
     <p class="copy">&copy; 2025 PetDex - Todos os direitos reservados.</p>
     <div class="footer-social">
+      <!-- Link do Instagram corrigido -->
       <a href="https://instagram.com/petdex.site" target="_blank" aria-label="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
     </div>
   </footer>
 
-  <!-- Script do Tema (mantido no final) -->
+  <!-- Scripts -->
+  <script>
+    // Slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    nextBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        showSlide(currentIndex);
+      });
+    });
+  </script>
+
   <script>
     const themeToggle = document.getElementById('theme-toggle');
     const icon = themeToggle?.querySelector('.theme-icon');
 
+    // Carrega tema salvo
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-theme');
       if (icon) icon.textContent = '☀️';
@@ -140,12 +177,43 @@
     themeToggle?.addEventListener('click', () => {
       document.body.classList.toggle('dark-theme');
       const isDark = document.body.classList.contains('dark-theme');
-      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      
+      if (icon) {
+        icon.textContent = isDark ? '☀️' : '🌙';
+      }
+      
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
   </script>
 
-   <script>
+  <script>
+    // Filtro de cards
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".category-btn");
+      const cards = document.querySelectorAll(".card");
+
+      function filterCards(category, activeButton) {
+        cards.forEach(card => {
+          card.style.display = card.dataset.filter === category ? "block" : "none";
+        });
+
+        buttons.forEach(btn => btn.classList.remove("active"));
+        activeButton.classList.add("active");
+      }
+
+      buttons.forEach(button => {
+        button.addEventListener("click", function () {
+          filterCards(this.dataset.category, this);
+        });
+      });
+
+      
+      if (buttons[0]) {
+        filterCards(buttons[0].dataset.category, buttons[0]);
+      }
+    });
+  </script>
+  <script>
   document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
@@ -184,6 +252,7 @@
   });
 });
 </script>
+
 
 </body>
 </html>

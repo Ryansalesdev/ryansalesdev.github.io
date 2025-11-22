@@ -185,6 +185,7 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   list-style: none;
   z-index: 1000;
+  list-style-type: none;
 }
 
 .dropdown-menu li {
@@ -312,43 +313,44 @@ body {
 }
 
 /* ===========================
-   BOTÃO MODO ESCURO (DARK MODE TOGGLE)
-=========================== */
-.theme-toggle {
-  position: fixed;
-  bottom: clamp(1rem, 4vw, 2rem);
-  right: clamp(1rem, 4vw, 1rem);
-  width: clamp(40px, 8vw, 56px);
-  height: clamp(40px, 8vw, 56px);
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+     BOTÃO MODO DARK
+  =========================== */
+  .theme-toggle {
+    width: clamp(40px, 8vw, 40px);
+    height: clamp(40px, 8vw, 40px);
+    border-radius: 50%;
+    background-color: #f7882f;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  
+  body.dark-theme .theme-toggle {
+    background-color: #222;
+    color: #f1f1f1;
+  }
+  
+  .theme-toggle:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .theme-icon {
+    font-size: 1.5rem;
+  }
+
+ /*botão dark mod do lado do cadastrar */
+  .header-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform var(--transition), box-shadow var(--transition);
+  gap: 15px;
 }
 
-body.dark-theme .theme-toggle {
-  background-color: #222;
-  color: #f1f1f1;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.theme-icon {
-  font-size: 1.5rem;
-}
-
-/* ===========================
-   UTILITÁRIOS (Botões genéricos - mantidos por compatibilidade)
-=========================== */
 .btn,
 .nome-denunciar {
   background-color: var(--primary);

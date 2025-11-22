@@ -17,7 +17,6 @@
     --dropdown-border: #ddd;
     --transition: 0.3s ease;
   }
-  
   /* Modo escuro */
   body.dark-theme {
     --light-bg: #121212;
@@ -167,8 +166,8 @@
   
   /* Barra de pesquisa - modo escuro */
   body.dark-theme .search-bar {
-    background: #1e1e1e; /* fundo da barra */
-    box-shadow: 0 0 0 2px #f7882f; /* mantém a borda laranja */
+    background: #1e1e1e; 
+    box-shadow: 0 0 0 2px #f7882f;
   }
   
   body.dark-theme .search-bar input {
@@ -180,14 +179,14 @@
   }
   
   body.dark-theme .search-bar button {
-    background: #f7882f; /* botão ainda laranja */
+    background: #f7882f; 
   }
   
   body.dark-theme .search-bar button:hover {
     background: #d96c1f;
   }
   
-  .cadastro{
+  .btn-cadastro{
       background-color: var(--primary);
     color: #fff;
     padding: 0.625rem 1.25rem;
@@ -200,13 +199,13 @@
     display: inline-block;
     text-align: center;
   }
-  .cadastro:hover {
+  .btn-cadastro:hover {
     background-color: var(--accent);
     transform: scale(1.05);
   }
-  .cadastro{
+  .btn-cadastro{
   
-    padding: 8px 16px;
+    padding: 12px 16px;
     font-size: 14px;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -214,9 +213,7 @@
   
   .nome-cadastrar{
     text-decoration: none;
-    color:#fff
-    
-    
+    color:#fff 
   }
   
   .btn,
@@ -265,7 +262,6 @@
     list-style: none;
     gap: 1.25rem;
     flex-wrap: nowrap;
-    
   }
   
   .nav-menu a {
@@ -432,10 +428,7 @@
   /* ===========================
      BANNER SLIDER
   =========================== */
-  
 
-
-  
   .banner-slider {
     position: relative;
     width: 50%;
@@ -662,39 +655,32 @@
   
    @media (max-width: 768px) {
     .logo {
-      margin-bottom: 0px; /* Removendo margem extra de baixo do logo */
+      margin-bottom: 0px; 
     }
-  
-    
   }
   /* ===========================
       AJUSTE DE ORGANIZAÇÃO DO HEADER (MOBILE)
   =========================== */
   @media (max-width: 768px) {
-      /* Container para os botões 'DENUNCIAR' e 'Cadastre-se' */
+      
       .header-actions-mobile {
           display: flex;
-          justify-content: center; /* Centraliza o bloco de botões */
-          gap: 10px; /* Espaço entre os botões */
-          width: 100%; /* Ocupa toda a largura */
-          margin-top: 10px; /* Adiciona um espaço abaixo da barra de pesquisa */
-          margin-bottom: 5px; /* Espaço antes da navbar */
+          justify-content: center;
+          gap: 10px;
+          width: 100%; 
+          margin-top: 10px; 
+          margin-bottom: 5px; 
       }
-      
-      /* Faz os botões ficarem com largura flexível (opcional, dependendo do design) */
-      .cadastro,
+      .btn-cadastro,
       .nome-denunciar {
-          width: 48%; /* Ocupa metade da largura do container, dando espaço para o gap */
-          flex-grow: 1;
+          width: 48%;
           text-align: center;
       }
-  
-      /* Redefine a organização do topo para melhor espaçamento */
       .header-container {
           flex-direction: column;
           align-items: center;
           gap: 0.75rem;
-          padding: 0 1rem; /* Adiciona padding lateral para garantir que não grude na borda */
+          padding: 0 1rem; 
       }
   
       .search-bar {
@@ -705,14 +691,13 @@
   .banner-slider {
     width: 100%;
     
-    overflow: hidden; /* corta o que passar */
+    overflow: hidden; 
     position: relative;
     
   }
-
   .slide {
     position: absolute;
-    inset: 0; /* ocupa todo o quadrado */
+    inset: 0; 
     width: 100%;
     height: 100%;
   }
@@ -720,7 +705,7 @@
   .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* preenche o quadrado sem distorcer */
+    object-fit: cover; 
     border-radius: 12px;
   }
 }
@@ -737,7 +722,7 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block; /* aparece só no mobile */
+    display: block; 
     position: absolute;
     top: 15px;
     right: 20px;
@@ -745,9 +730,9 @@
   }
 
   .nav-menu {
-    display: none; /* esconde a lista */
+    display: none; 
     position: absolute;
-    top: 60px; /* logo abaixo da navbar */
+    top: 60px;
     left: 0;
     width: 100%;
     flex-direction: column;
@@ -758,7 +743,7 @@
   }
 
   .nav-menu.active {
-    display: flex; /* aparece ao clicar no hamburguer */
+    display: flex; 
   }
 
   /* Dropdown no mobile abre com clique */
@@ -773,18 +758,14 @@
     flex-direction: column;
   }
 }
-/* ======= Ajustes menu hamburguer (cole no final do style.css) ======= */
-/* garante que a navbar fique acima do banner e que dropdowns apareçam */
 .navbar {
   position: relative;
   z-index: 9999;
-  overflow: visible; /* sobrescreve overflow:auto que causava scroll */
+  overflow: visible; 
 }
-
 .navbar .navbar-inner {
   position: relative;
 }
-
 /* botão hamburguer (escondido no desktop) */
 .menu-toggle {
   display: none;
@@ -795,7 +776,6 @@
   cursor: pointer;
   padding: 6px;
 }
-
 /* comportamento padrão do menu (desktop) */
 .nav-menu {
   display: flex;
@@ -804,7 +784,6 @@
   flex-wrap: nowrap;
   align-items: center;
 }
-
 /* dropdown padrão (desktop) */
 .dropdown .dropdown-menu {
   display: none;
@@ -817,7 +796,6 @@
   box-shadow: 0 8px 16px rgba(0,0,0,0.08);
   z-index: 10001;
 }
-
 /* === MOBILE: menu vertical ativado pelo botão === */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -828,9 +806,8 @@
     transform: translateY(-700%);
     z-index: 11000;
   }
-
   .nav-menu {
-    display: none; /* escondido por padrão no mobile */
+    display: none; 
     position: absolute;
     top: 100%;
     left: 0;
@@ -855,7 +832,6 @@
     white-space: normal;
     text-transform: none;
   }
-
   /* Dropdown no mobile: empilha e abre por clique */
   .dropdown .dropdown-menu {
     position: relative;
@@ -879,10 +855,228 @@
     transform: rotate(180deg);
   }
 }
-
 /* Desktop: hover continua abrindo dropdown */
 @media (min-width: 769px) {
   .dropdown:hover > .dropdown-menu {
     display: block;
   }
+}
+/* ===========================
+      MODAL DE CADASTRO
+=========================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  z-index: 9999 !important;
+}
+
+/* CAIXA DO MODAL */
+.modal {
+  background: var(--light-bg);
+  width: 450px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 35px 35px 45px;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: modalFade .25s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: .2s ease;
+}
+
+.modal-close:hover {
+  color: #222;
+  transform: scale(1.15);
+}
+.dark-theme .modal {
+  background: #222;
+  color: #fff;
+}
+.container-modal header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-icon {
+  width: 120px;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+
+.container-modal header h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.container-modal header p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+
+.dark-theme .container-modal header p {
+  color: #ccc !important;
+}
+
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+
+.dark-theme .form-group label {
+  color: #e6e6e6 !important;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid #d3d3d3;
+  background: #f7f7f7;
+  font-size: 15px;
+  transition: .25s ease;
+}
+
+
+.dark-theme .form-group input,
+.dark-theme .form-group select {
+  background: #333;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+
+.dark-theme .form-group input::placeholder,
+.dark-theme .form-group select::placeholder {
+  color: #bdbdbd !important;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #f7882f;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(247,136,47,0.25);
+}
+
+
+.dark-theme .form-group input:focus,
+.dark-theme .form-group select:focus {
+  background: #2a2a2a;
+  border-color: #f7882f;
+  box-shadow: 0 0 0 3px rgba(247,136,47,0.35);
+}
+
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: #f7882f;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: .25s ease;
+}
+
+.btn-submit:hover {
+  background: #e37824;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(247,136,47,0.45);
+}
+
+
+@keyframes modalFade {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-login {
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.btn-login {
+    margin-left: 10px;
+}
+.user-name {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 12px;
+}
+.btn-edit,
+.btn-logout {
+  padding: 6px 12px;
+  background: #f7882f;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-logout {
+  background: #ff0800;
+}
+
+
+.btn-edit:hover,
+.btn-logout:hover {
+   background-color: var(--accent);
+    transform: scale(1.05);
+
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }

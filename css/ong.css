@@ -195,8 +195,7 @@
     min-width: 10rem;
     border: 1px solid var(--dropdown-border);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: background-color var(--transition), border-color var(--transition);
-    list-style-type: none;
+    transition: background-color var(--transition), border-color var(--transition);  
   }
   
   .dropdown-menu a {
@@ -315,179 +314,6 @@
   .theme-icon {
     font-size: 1.5rem;
   }
-  
-  
-  /* ===========================
-   BANNER SLIDER
-=========================== */
-.banner-slider {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    height: auto;
-  }
-  
-  .slide {
-    min-width: 100%;
-    opacity: 0;
-    transition: opacity var(--transition);
-    position: absolute;
-    inset: 0;
-  }
-  
-  .slide.active {
-    opacity: 1;
-    position: relative;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-  }
-  
-  .prev-btn,
-  .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: background var(--transition);
-  }
-  
-  body.dark-theme .prev-btn,
-  body.dark-theme .next-btn {
-    background: rgba(30, 30, 30, 0.8);
-    color: #fff;
-  }
-  
-  .prev-btn:hover,
-  .next-btn:hover {
-    background: #fff;
-  }
-  
-  body.dark-theme .prev-btn:hover,
-  body.dark-theme .next-btn:hover {
-    background: #080808;
-  }
-  
-  .prev-btn { left: 15px; }
-  .next-btn { right: 15px; }
-  
-  .dots {
-    position: absolute;
-    bottom: 1.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.625rem;
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(10, 10, 10, 0.5);
-    cursor: pointer;
-    transition: background var(--transition);
-  }
-  
-  body.dark-theme .dot {
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .dot.active {
-    background: #fff;
-  }
-  
-  body.dark-theme .dot.active {
-    background: #f1f1f1;
-  }
-  
-  /* ===========================
-   CARDS
-=========================== */
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .card {
-    width: 280px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition), box-shadow var(--transition);
-    display: none; /* controlado por JS ou filtros */
-  }
-  
-  .card[data-filter="cachorro"],
-  .card[data-filter="gato"],
-  .card[data-filter="cavalo"] {
-    display: block;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    padding: 15px;
-    background: var(--card-bg);
-    transition: background var(--transition);
-  }
-  
-  .card-title {
-    font-size: 1rem;
-    margin: 0 0 10px 0;
-    color: var(--text-color);
-    line-height: 1.4;
-  }
-  
-  .read-more {
-    color: var(--text-muted);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: color var(--transition);
-  }
-  
-  .read-more::after {
-    content: " >";
-    margin-left: 10px;
-  }
-  
-  .read-more:hover {
-    color: var(--accent);
-  }
-
- 
 
   button {
     background-color: var(--primary);
@@ -502,3 +328,123 @@
     display: inline-block;
     text-align: center;
   }
+
+/* Seção "Sobre a ONG" */
+.about-ong {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.about-ong img {
+  width: 420px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition);
+}
+
+.about-ong img:hover {
+  transform: scale(1.02);
+}
+
+.about-ong-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-ong-text h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.about-ong-text p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Contadores */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.stat {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  padding: 1.5rem;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  background: var(--light-bg);
+}
+
+.stat h3 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.btn-adotar {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    display: block;             
+    width: fit-content;         
+    margin: 60px auto 80px;     
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background var(--transition), transform var(--transition);
+}
+
+  
+  .btn-adotar:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+  }
+      
+/* Responsividade */
+@media (max-width: 768px) {
+  .about-ong {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-ong img {
+    width: 90%;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat {
+    width: 80%;
+  }
+}

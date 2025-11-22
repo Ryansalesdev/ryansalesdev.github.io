@@ -167,12 +167,12 @@
   
   /* Barra de pesquisa - modo escuro */
   body.dark-theme .search-bar {
-    background: #1e1e1e; /* fundo da barra */
-    box-shadow: 0 0 0 2px #f7882f; /* mantém a borda laranja */
+    background: #1e1e1e; 
+    box-shadow: 0 0 0 2px #f7882f; 
   }
   
   body.dark-theme .search-bar input {
-    color: #f1f1f1; /* texto claro */
+    color: #f1f1f1; 
   }
   
   body.dark-theme .search-bar input::placeholder {
@@ -180,7 +180,7 @@
   }
   
   body.dark-theme .search-bar button {
-    background: #f7882f; /* botão ainda laranja */
+    background: #f7882f; 
   }
   
   body.dark-theme .search-bar button:hover {
@@ -309,7 +309,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: background-color var(--transition), border-color var(--transition);
     z-index: 9999;
-    list-style-type: none; 
+    list-style-type: none;
   }
   
   .dropdown-menu a {
@@ -518,10 +518,6 @@
     font-size: 1.5rem;
   }
   
- 
-  
- 
-  
   body.dark-theme .prev-btn,
   body.dark-theme .next-btn {
     background: rgba(30, 30, 30, 0.8);
@@ -571,8 +567,6 @@
     background: #f1f1f1;
   }
   
- 
-  
   body.dark-theme .category-btn {
     background-color: #2a2a2a;
     color: #ccc;
@@ -602,7 +596,7 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block; /* aparece só no mobile */
+    display: block; 
     position: absolute;
     top: 15px;
     right: 20px;
@@ -610,7 +604,7 @@
   }
 
   .nav-menu {
-    display: none; /* esconde a lista */
+    display: none; 
     position: absolute;
     top: 60px; /* logo abaixo da navbar */
     left: 0;
@@ -638,12 +632,11 @@
     flex-direction: column;
   }
 }
-/* ======= Ajustes menu hamburguer (cole no final do style.css) ======= */
-/* garante que a navbar fique acima do banner e que dropdowns apareçam */
+
 .navbar {
   position: relative;
   z-index: 9999;
-  overflow: visible; /* sobrescreve overflow:auto que causava scroll */
+  overflow: visible; 
 }
 
 .navbar .navbar-inner {

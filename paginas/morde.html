@@ -14,7 +14,7 @@
       <div class="left">
         <a href="/paginas/Sobre.html">Sobre nós</a> |
         <a href="/paginas/help.html">Help</a> |
-        <a href="#contato">Contato</a>
+        <a href="#">Contato</a>
       </div>
     </div>
   </div>
@@ -43,23 +43,23 @@
         <li class="dropdown">
           <a href="#" aria-haspopup="true" aria-expanded="false">ONGs <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#">ONG AmeMais</a></li>
-            <li><a href="#">ONG LOVEPET</a></li>
-            <li><a href="#">ONG OSPETS</a></li>
+            <li><a href="/ongs.html">ONG Esperança Animal</a></li>
+
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" aria-haspopup="true" aria-expanded="false">VETERINÁRIOS <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="/paginas/veterinaria.html" target="_blank">Clínica Dra. Ana Silva</a></li>
+            <li><a href="/paginas/veterinaria.html">DRA. Ana Silva</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" aria-haspopup="true" aria-expanded="false">Pet Shops <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="/paginas/linox.html" target="_blank">PetShop Linox</a></li>
+            <li><a href="#">Pets Shop RJ</a></li>
           </ul>
         </li>
+        <li><a href="#">CONTATO</a></li>
       </ul>
     </div>
   </nav>
@@ -147,7 +147,7 @@
     </div>
 
   <!-- Footer -->
-  <footer class="site-footer" aria-label="Rodapé do site" id="contato">
+  <footer class="site-footer" aria-label="Rodapé do site">
     <div class="footer-container">
       <div class="footer-col">
         <h4>Endereço</h4>
@@ -171,7 +171,7 @@
   <!-- Scripts -->
   <script>
 
-      // Toggle Dark Theme com persistência
+      
       const themeToggle = document.getElementById('theme-toggle');
       const icon = themeToggle?.querySelector('.theme-icon');
 
@@ -189,7 +189,7 @@
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
       });
 
-      // Filtro de cards (mantido, mas só executa se houver botões)
+      
       const buttons = document.querySelectorAll('.category-btn');
       const cards = document.querySelectorAll('.card');
 
